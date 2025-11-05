@@ -3,13 +3,15 @@
  * @return {Object}
  */
 var expect = function(val) {
+    converted = Number(val);
     return{
         toBe: function(val_1){
-            if (val === val_1) return true;
+
+            if (converted === val_1) return true;
             throw "Not Equal"
         },
         notToBe: function(val_2){
-            if (val != val_2) return true;
+            if (converted != val_2) return true;
             throw "Equal"
         }
     }
